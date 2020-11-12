@@ -19,13 +19,13 @@ namespace TheThreeAmigos.Controllers
         {
             _context = context;
         }
-
+        [HttpGet("/Suppliers")]
         // GET: SupplierssModels
         public async Task<IActionResult> Index()
         {
             return Ok(await _context.GetSuppliers());
         }
-
+        [HttpGet("/SuppliersDetails/{id}")]
         // GET: SupplierssModels/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -48,7 +48,7 @@ namespace TheThreeAmigos.Controllers
         // POST: SupplierssModels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost ("/CreateSupplier")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("SupplierId,SupplierName,SupplierAddress,SupplierEmail,SupplierContactNumber")] SuppliersModel supplierssModel)
         {
@@ -65,7 +65,7 @@ namespace TheThreeAmigos.Controllers
         // POST: SupplierssModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost ("/EditSuppliers")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("SupplierId,SupplierName,SupplierAddress,SupplierEmail,SupplierContactNumber")] SuppliersModel supplierssModel)
         {
@@ -99,7 +99,7 @@ namespace TheThreeAmigos.Controllers
 
 
         // POST: SupplierssModels/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost ("/DeleteSuppliers/{id}"), ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
