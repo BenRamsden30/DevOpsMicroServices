@@ -11,17 +11,21 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using TheThreeAmigos.Data;
+using TheThreeAmigosCorp.Proxies;
 
 namespace TheThreeAmigos
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment enviroment)
         {
             Configuration = configuration;
+            this.enviroment = enviroment;
         }
 
         public IConfiguration Configuration { get; }
+        
+        public IHostingEnvironment enviroment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -38,6 +42,15 @@ namespace TheThreeAmigos
 
             services.AddDbContext<TheThreeAmigosContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("TheThreeAmigosContext")));
+
+            if ( enviroment.IsDevelopment())
+            {
+                services.AddSingleton<ISuppliersProxy, FakeSuppliersProxy>();
+            }
+            else
+            {
+                services.AddSingleton<ISuppliersProxy, RealSuppliersProxy>();
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

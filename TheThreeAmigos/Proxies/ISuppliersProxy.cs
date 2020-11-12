@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheThreeAmigos.Data;
 using TheThreeAmigos.Models;
 
 namespace TheThreeAmigosCorp.Proxies
@@ -15,6 +17,8 @@ namespace TheThreeAmigosCorp.Proxies
         Task EditSupplier(SuppliersModel Edit);
 
         Task DeleteSupplier(SuppliersModel Delete);
+
+        Task CreateSupplier(SuppliersModel Create);
     }
 
     public class FakeSuppliersProxy : ISuppliersProxy
@@ -33,9 +37,12 @@ namespace TheThreeAmigosCorp.Proxies
             this.suppliers = suppliers;
         }
 
-
-
-
+        public Task CreateSupplier(SuppliersModel Create)
+        {
+            return Task.Run(() => {
+                suppliers.Add(Create);
+            });
+        }
 
         public Task DeleteSupplier(SuppliersModel supplier)
         {
@@ -60,6 +67,52 @@ namespace TheThreeAmigosCorp.Proxies
         public Task<List<SuppliersModel>> GetSuppliers()
         {
             return Task.FromResult(suppliers);
+        }
+    }
+    public class RealSuppliersProxy : ISuppliersProxy
+    {
+        private readonly TheThreeAmigosContext _context;
+
+        public RealSuppliersProxy(TheThreeAmigosContext context)
+        {
+            _context = context;
+        }
+
+        public Task CreateSupplier(SuppliersModel Create)
+        {
+            return Task.Run(async () => {
+                _context.Add(Create);
+                await _context.SaveChangesAsync();
+            });
+        }
+
+        public Task DeleteSupplier(SuppliersModel Delete)
+        {
+            return Task.Run(async () =>
+            {
+                _context.SuppliersModel.Remove(Delete);
+                await _context.SaveChangesAsync();
+            });
+        }
+
+        public Task EditSupplier(SuppliersModel Edit)
+        {
+            return Task.Run(async () =>
+            {
+                    _context.Update(Edit);
+                    await _context.SaveChangesAsync();
+            });
+        }
+
+        public async Task<SuppliersModel> GetSupplier(string Get)
+        {
+            return await _context.SuppliersModel
+                .FirstOrDefaultAsync(m => m.SupplierId == Get); ;
+        }
+
+        public async Task<List<SuppliersModel>> GetSuppliers()
+        {
+            return await _context.SuppliersModel.ToListAsync();
         }
     }
 }

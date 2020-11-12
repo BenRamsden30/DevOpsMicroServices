@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TheThreeAmigos.Data;
 using TheThreeAmigos.Models;
+using TheThreeAmigosCorp.Proxies;
 
 namespace TheThreeAmigos.Controllers
 {
     public class SupplierssModelsController : Controller
     {
-        private readonly TheThreeAmigosContext _context;
+        private readonly ISuppliersProxy _context;
 
-        public SupplierssModelsController(TheThreeAmigosContext context)
+        public SupplierssModelsController(ISuppliersProxy context)
         {
             _context = context;
         }
@@ -22,7 +23,7 @@ namespace TheThreeAmigos.Controllers
         // GET: SupplierssModels
         public async Task<IActionResult> Index()
         {
-            return Ok(await _context.SuppliersModel.ToListAsync());
+            return Ok(await _context.GetSuppliers());
         }
 
         // GET: SupplierssModels/Details/5
@@ -33,8 +34,7 @@ namespace TheThreeAmigos.Controllers
                 return NotFound();
             }
 
-            var supplierssModel = await _context.SuppliersModel
-                .FirstOrDefaultAsync(m => m.SupplierId == id);
+            var supplierssModel = await _context.GetSupplier(id);
             if (supplierssModel == null)
             {
                 return NotFound();
@@ -54,8 +54,7 @@ namespace TheThreeAmigos.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(supplierssModel);
-                await _context.SaveChangesAsync();
+                await _context.CreateSupplier(supplierssModel);
                 return RedirectToAction(nameof(Index));
             }
             return Ok(supplierssModel);
@@ -79,8 +78,8 @@ namespace TheThreeAmigos.Controllers
             {
                 try
                 {
-                    _context.Update(supplierssModel);
-                    await _context.SaveChangesAsync();
+
+                    await _context.EditSupplier(supplierssModel);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -104,15 +103,14 @@ namespace TheThreeAmigos.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var supplierssModel = await _context.SuppliersModel.FindAsync(id);
-            _context.SuppliersModel.Remove(supplierssModel);
-            await _context.SaveChangesAsync();
+            var suppliersModel = await _context.GetSupplier(id);
+            await _context.DeleteSupplier(suppliersModel);
             return RedirectToAction(nameof(Index));
         }
 
         private bool SupplierssModelExists(string id)
         {
-            return _context.SuppliersModel.Any(e => e.SupplierId == id);
+            return _context.GetSupplier(id) != null;
         }
     }
 }
