@@ -47,7 +47,7 @@ namespace TheThreeAmigosCorp.Proxies
         public async Task<SuppliersModel> GetSupplier(string Get)
         {
             return await _context.SuppliersModel
-                .FirstOrDefaultAsync(m => m.SupplierId == Get); ;
+                .FirstOrDefaultAsync(m => m.SupplierId == Get); 
         }
 
         public async Task<List<SuppliersModel>> GetSuppliers()

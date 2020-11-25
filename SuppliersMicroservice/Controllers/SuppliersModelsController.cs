@@ -20,6 +20,7 @@ namespace TheThreeAmigos.Controllers
         {
             return Ok(await _context.GetSuppliers());
         }
+
         [HttpGet("/SuppliersDetails/{id}")]
         // GET: SupplierssModels/Details/5
         public async Task<IActionResult> Details(string id)
