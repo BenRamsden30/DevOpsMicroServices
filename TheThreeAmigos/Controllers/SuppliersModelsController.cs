@@ -13,9 +13,9 @@ namespace TheThreeAmigos.Controllers
 {
     public class SupplierssModelsController : Controller
     {
-        private readonly ISuppliersProxy _context;
+        private readonly ISuppliersProxyFake _context;
 
-        public SupplierssModelsController(ISuppliersProxy context)
+        public SupplierssModelsController(ISuppliersProxyFake context)
         {
             _context = context;
         }
