@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroservice\\SuppliersMicroservice\\SuppliersMicroservice.csproj": {}
+    "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroService\\SuppliersMicroservice\\SuppliersMicroservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroservice\\SuppliersMicroservice\\SuppliersMicroservice.csproj": {
+    "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroService\\SuppliersMicroservice\\SuppliersMicroservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroservice\\SuppliersMicroservice\\SuppliersMicroservice.csproj",
+        "projectUniqueName": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroService\\SuppliersMicroservice\\SuppliersMicroservice.csproj",
         "projectName": "SuppliersMicroservice",
-        "projectPath": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroservice\\SuppliersMicroservice\\SuppliersMicroservice.csproj",
+        "projectPath": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroService\\SuppliersMicroservice\\SuppliersMicroservice.csproj",
         "packagesPath": "C:\\Users\\Ben-R\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroservice\\SuppliersMicroservice\\obj\\",
+        "outputPath": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroService\\SuppliersMicroservice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ben-R\\AppData\\Roaming\\NuGet\\NuGet.Config",

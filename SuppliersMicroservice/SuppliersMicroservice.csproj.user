@@ -12,5 +12,6 @@
     <WebStackScaffolding_DbContextTypeFullName>SuppliersMicroservice.Data.SuppliersMicroserviceContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>False</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>SuppliersMicroservice20201202150956 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

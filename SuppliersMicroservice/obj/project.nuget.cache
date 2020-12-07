@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hwEyAMN/HLZHXU6pmZSklWYdtcp+0HUrElm99sNEwttUbnhs6IgjFIWhSr+tFLf56y26gNBVYpZdHfZwlzS+3w==",
+  "dgSpecHash": "t+MQH/7LmTghDV1iL70of3Kct2crlPvU/6zYgrSW73g9uBvILc4NPXk4M6nf3VWK+IZV4h8Rc5j9qNwofT8Iow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroservice\\SuppliersMicroservice\\SuppliersMicroservice.csproj",
+  "projectFilePath": "C:\\Users\\Ben-R\\source\\repos\\SuppliersMicroService\\SuppliersMicroservice\\SuppliersMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ben-R\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ben-R\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

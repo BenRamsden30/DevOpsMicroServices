@@ -170,3 +170,6 @@ C:\Users\Ben-R\source\repos\SuppliersMicroservice\SuppliersMicroservice\obj\Debu
 C:\Users\Ben-R\source\repos\SuppliersMicroservice\SuppliersMicroservice\obj\Debug\netcoreapp3.1\SuppliersMicroservice.genruntimeconfig.cache
 C:\Users\Ben-R\source\repos\SuppliersMicroservice\SuppliersMicroservice\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
 C:\Users\Ben-R\source\repos\SuppliersMicroservice\SuppliersMicroservice\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+C:\Users\Ben-R\source\repos\SuppliersMicroService\SuppliersMicroservice\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\SuppliersMicroservice20201202150956 - Web Deploy\profile.arm.json
+C:\Users\Ben-R\source\repos\SuppliersMicroService\SuppliersMicroservice\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.SuppliersMicroservice20201202150956 - Web Deploy.json
+C:\Users\Ben-R\source\repos\SuppliersMicroService\SuppliersMicroservice\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\SuppliersMicroservice20201202150956 - Web Deploy\mssql1.arm.json
