@@ -16,6 +16,11 @@ namespace SuppliersMicroservice
             CreateHostBuilder(args).Build().Run();
         }
 
+        public static void SuppliersModelsController()
+        {
+            throw new NotImplementedException();
+        }
+
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
