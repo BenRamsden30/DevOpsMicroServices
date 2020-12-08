@@ -40,7 +40,7 @@ namespace SuppliersMicroservice
 
             if (enviroment.IsDevelopment())
             {
-                services.AddScoped<ISuppliersProxyInterface, FakeSuppliersProxy>();
+                services.AddSingleton<ISuppliersProxyInterface, FakeSuppliersProxy>();
             }
             else
             {

@@ -18,7 +18,7 @@ namespace TheThreeAmigosCorp.Proxies
             _context = context;
         }
 
-        public Task CreateSupplier(SuppliersModel Create)
+        public Task CreateSupplier(SuppliersModel Create, string supplierID)
         {
             return Task.Run(async () => {
                 _context.Add(Create);

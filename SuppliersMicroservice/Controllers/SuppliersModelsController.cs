@@ -95,7 +95,7 @@ namespace TheThreeAmigos.Controllers
 
 
         // POST: SupplierssModels/Delete/5
-        [HttpPost ("/DeleteSuppliers/{id}"), ActionName("Delete")]
+        [HttpPost ("/DeleteSuppliers/{id}"))]
         
         public async Task<IActionResult> DeleteConfirmed(string id)
         {

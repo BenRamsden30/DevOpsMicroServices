@@ -5,15 +5,19 @@ using TheThreeAmigos.Proxies;
 
 namespace TheThreeAmigosCorp.Proxies
 {
-
+    
     public class FakeSuppliersProxy : ISuppliersProxyInterface
     {
+
+
         List<SuppliersModel> suppliers;
+        public int cntr = 2;
 
         public FakeSuppliersProxy()
         {
             suppliers = new List<SuppliersModel>() {
             new SuppliersModel() {SupplierId = "1", SupplierName = "Test", SupplierAddress = "42 Wallabe Way Sydney", SupplierEmail = "Test@The3Amigos.net", SupplierContactNumber = "01642012041"}
+            
             };
         }
 
@@ -22,8 +26,10 @@ namespace TheThreeAmigosCorp.Proxies
             this.suppliers = suppliers;
         }
 
-        public Task CreateSupplier(SuppliersModel Create)
+        public Task CreateSupplier(SuppliersModel Create, string supplierID)
         {
+            cntr++;
+            Create.SupplierId = supplierID;
             return Task.Run(() => {
                 suppliers.Add(Create);
             });
@@ -32,7 +38,8 @@ namespace TheThreeAmigosCorp.Proxies
         public Task DeleteSupplier(SuppliersModel supplier)
         {
             return Task.Run(() => {
-                suppliers.RemoveAll(s => s.SupplierId == supplier.SupplierId);
+                //suppliers.RemoveAll(s => s.SupplierId == supplier.SupplierId);
+                suppliers.Clear();
             });
         }
 

@@ -17,7 +17,7 @@ namespace TheThreeAmigos.Proxies
 
         Task DeleteSupplier(SuppliersModel Delete);
 
-        Task CreateSupplier(SuppliersModel Create);
+        Task CreateSupplier(SuppliersModel Create,  string supplierID);
     }
 }
 
