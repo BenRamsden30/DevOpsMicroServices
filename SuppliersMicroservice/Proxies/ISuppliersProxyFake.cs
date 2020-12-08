@@ -29,6 +29,7 @@ namespace TheThreeAmigosCorp.Proxies
         public Task CreateSupplier(SuppliersModel Create, string supplierID)
         {
             cntr++;
+            supplierID = cntr.ToString();
             Create.SupplierId = supplierID;
             return Task.Run(() => {
                 suppliers.Add(Create);
@@ -38,8 +39,7 @@ namespace TheThreeAmigosCorp.Proxies
         public Task DeleteSupplier(SuppliersModel supplier)
         {
             return Task.Run(() => {
-                //suppliers.RemoveAll(s => s.SupplierId == supplier.SupplierId);
-                suppliers.Clear();
+                suppliers.RemoveAll(s => s.SupplierId == supplier.SupplierId);
             });
         }
 

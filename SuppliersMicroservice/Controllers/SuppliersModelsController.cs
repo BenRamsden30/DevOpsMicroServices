@@ -50,7 +50,7 @@ namespace TheThreeAmigos.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _context.CreateSupplier(supplierssModel);
+                await _context.CreateSupplier(supplierssModel,"1");
                 return RedirectToAction(nameof(Index));
             }
             return Ok(supplierssModel);
@@ -95,7 +95,7 @@ namespace TheThreeAmigos.Controllers
 
 
         // POST: SupplierssModels/Delete/5
-        [HttpPost ("/DeleteSuppliers/{id}"))]
+        [HttpPost ("/DeleteSuppliers/{id}")]
         
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
